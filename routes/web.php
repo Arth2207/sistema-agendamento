@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\PasswordResetLinkController;
 
 Route::get('/', function () {
     return view('home');
@@ -26,6 +27,10 @@ Route::middleware(['auth'])->group(function () {
         return view('usuario.agenda');
     })->name('agenda');
 });
+
+Route::get('/forgot-password', [PasswordResetLinkController::class, 'create']);
+Route::post('/forgot-password', [PasswordResetLinkController::class, 'store']);
+
 
 
 require __DIR__.'/auth.php';
