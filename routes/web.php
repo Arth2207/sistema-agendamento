@@ -32,5 +32,9 @@ Route::get('/forgot-password', [PasswordResetLinkController::class, 'create']);
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store']);
 
 
+// routes/web.php
+
+
+
 
 require __DIR__.'/auth.php';
